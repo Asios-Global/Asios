@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+
+}
+
+.button {
+  background-color: #a42832;
+  color: white;
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.button:hover {
+  background-color: #691a21;
+}
+
+.bodyh1 {
+  text-align: left;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.bodyh2 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.btn {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2d3031;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 0;
+  margin: 5px 0;
+  width: 180px;
+  box-shadow: unset;
+  color: #2d3031;
+  background-color: #fff;
+  transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #2d3031;
+  z-index: -1;
+  transition: left 0.3s ease-in-out;
+}
+
+.btn:hover {
+  color: #fff;
+  border-color: #2d3031;
+}
+
+.btn:hover::before {
+  left: 0;
+}
