@@ -42,31 +42,29 @@ const Header = () => {
         </Link>
       </div>
       <div className="hidden md:flex gap-4 sm:gap-6">
-        <Link to="/" className='text-gray-800 hover:text-blue-600'>Home</Link>
-        <Link to="/about" className='text-gray-800 hover:text-blue-600'>About</Link>
-        <Link to='/product' className='text-gray-800 hover:text-blue-600'>Product</Link>
-        <Link to='/contact' className='text-gray-800 hover:text-blue-600'>Contact</Link>
+        <Link to="/" className=' hover:text-primary'>Home</Link>
+        <Link to='/product' className=' hover:text-primary'>Product</Link>
+        <Link to='/catalogue' className=' hover:text-primary'>E-Catalogue</Link>
+        <Link to="/about" className=' hover:text-primary'>About</Link>
+        <Link to='/contact' className=' hover:text-primary'>Contact</Link>
       </div>
       <div className="md:hidden flex items-center">
-        <button onClick={toggleMenu} className='text-gray-800'>
+        <button onClick={toggleMenu} className=''>
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
-      <div 
+      <div
         ref={menuRef}
-        className={`fixed top-0 right-0 h-full w-full bg-white shadow-lg md:hidden transition-transform transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed top-16 right-0 h-full w-full bg-white  md:hidden transition-transform transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
         style={{ display: 'none' }}
       >
-        <div className="flex justify-end p-5">
-          <button onClick={toggleMenu} className='text-gray-800'>
-            <FaTimes size={24} />
-          </button>
-        </div>
+        
         <nav className='flex flex-col items-center py-4'>
-          <Link to="/" className='text-gray-800 hover:text-blue-600 py-2' onClick={toggleMenu}>Home</Link>
-          <Link to="/about" className='text-gray-800 hover:text-blue-600 py-2' onClick={toggleMenu}>About</Link>
-          <Link to='/product' className='text-gray-800 hover:text-blue-600 py-2' onClick={toggleMenu}>Product</Link>
-          <Link to='/contact' className='text-gray-800 hover:text-blue-600 py-2' onClick={toggleMenu}>Contact</Link>
+          <Link to="/" className=' hover:text-primary py-2' onClick={toggleMenu}>Home</Link>
+          <Link to='/product' className=' hover:text-primary py-2' onClick={toggleMenu}>Product</Link>
+          <Link to='/catalogue' className=' hover:text-primary py-2 onClick={toggleMenu}'>E-Catalogue</Link>
+          <Link to="/about" className=' hover:text-primary py-2' onClick={toggleMenu}>About</Link>
+          <Link to='/contact' className=' hover:text-primary py-2' onClick={toggleMenu}>Contact</Link>
         </nav>
       </div>
     </div>

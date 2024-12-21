@@ -1,15 +1,27 @@
 import React from 'react';
 import Banner from './Slider'
-import Aboutcompany from './Aboutcompany';
-import Portfolio from './Portfolio';
 import WhyChooseUs from './WhyChooseUs';
+import Portfolio from './Portfolio';
+import ErrorBoundary from './ErrorBoundaries';
+import OurProfile from './OurProfile';
+import AboutUs from './About section/AboutUs';
+import Cerification from '../AboutUS/Cerification';
+import GlobalFootprint from '../AboutUS/GlobalFootprint';
 const Home = () => {
     return (
         <div className='relative'>
+            <ErrorBoundary>
             <Banner />
-            <WhyChooseUs />
+            <div>
+            <AboutUs/>
+            <OurProfile />
             <Portfolio />
-            <Aboutcompany />
+            <WhyChooseUs />
+            <Cerification />
+            <GlobalFootprint />
+
+            </div>
+            </ErrorBoundary>
         </div>
     )
 }
