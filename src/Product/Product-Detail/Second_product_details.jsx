@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import InquiryModal from "./InquiryModal";
 import ImgsViewer from "react-images-viewer";
+import SkeletonLoader from "../../SkeletonLoader";
 
 const Second_product_details = () => {
   const navigate = useNavigate();
@@ -84,7 +85,7 @@ const Second_product_details = () => {
       <div className="container">
         <div className="md:pt-[40px] pb-[25px] mb-[50px]">
           <div className="flex md:flex-row flex-col md:gap-20 gap-5 items-start">
-            <div className="flex flex-col">
+            {/* <div className="flex flex-col">
               <img
                 src={product ? product.image : ""}
                 alt={product ? product.productName : "Loading..."}
@@ -95,11 +96,27 @@ const Second_product_details = () => {
                 }`}
                 onClick={openImageViewer}
               />
+            </div> */}
+            <div className="flex flex-col">
+              {product ? (
+                <img
+                  src={product.image}
+                  alt={product.productName}
+                  className={`h-[350px] w-[350px] sm:h-[400px] sm:w-[400px] cursor-pointer ${
+                    product?.category === "Tiles" || product.category === "Decorative Wall & Ceiling Panel" || product.category === "Quartz Slab"
+                      ? "border-[#dfdfdf] border object-cover"
+                      : "object-contain"
+                  }`}
+                  onClick={openImageViewer}
+                />
+              ) : (
+                <SkeletonLoader width="300px" height="300px" />
+              )}
             </div>
             <div className="float-left">
               <>
                 <span className="uppercase font-bold text-lg">
-                  {product ? product.productName : "Loading..."}
+                  {product ? product.productName : " "}
                 </span>
 
                 <table className="table-auto w-full my-4 overflow-x-auto">
@@ -238,9 +255,8 @@ const Second_product_details = () => {
         productName={product ? product.productName : ""}
       />
 
-      {/* Image Viewer */}
       <ImgsViewer
-        imgs={[{ src: product ? product.image : "" }]} // Display the current image
+        imgs={[{ src: product ? product.image : "" }]}
         currImg={currImg}
         isOpen={viewerIsOpen}
         onClickPrev={gotoPrevious}

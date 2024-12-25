@@ -3,6 +3,7 @@ import axios from "axios";
 import product from "../assets/4.webp";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import SkeletonLoader from "../SkeletonLoader";
 const Product = () => {
   const [productData, setProductData] = useState([]);
   const baseURL = import.meta.env.VITE_API_BASE_URL;
@@ -45,27 +46,35 @@ const Product = () => {
       </div>
       <div className="container">
         <div className="flex flex-wrap gap-3 gap-y-4 justify-center items-start my-5">
-          {productData.length > 0 ? (
-            productData.map((data) => (
-              <div
-                className="relative group overflow-hidden cursor-pointer"
-                key={data._id}
-              >
-                <Link to={`/main-product/${data.category}`}>
-                  <img
-                    src={data.image || "fallback-image.jpg"}
-                    className="md:w-[400px] md:h-[400px] w-[350px] h-[350px]"
-                    alt={data.title}
-                  />
-                  <div className="absolute bottom-0 w-full text-center bg-[#232323] text-white p-2 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                    {data.category}
-                  </div>
-                </Link>
+        {productData.length > 0 ? (
+        productData.map((data) => (
+          <div className="relative group overflow-hidden cursor-pointer" key={data._id}>
+            <Link to={`/main-product/${data.category}`}>
+              <img
+                src={data.image || "fallback-image.jpg"}
+                className="md:w-[400px] md:h-[400px] w-[350px] h-[350px] object-cover"
+                alt={data.title}
+              />
+              <div className="absolute bottom-0 w-full text-center bg-[#232323] text-white p-2 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                {data.category}
               </div>
-            ))
-          ) : (
-            <p>No products available.</p>
-          )}
+            </Link>
+          </div>
+        ))
+      ) : (
+        // Skeleton loader for each product
+        Array.from({ length: 10 }).map((_, index) => (
+          <div
+            className="relative group overflow-hidden cursor-pointer"
+            key={index}
+          >
+            <SkeletonLoader width="350px" height="350px" />
+            <div className="absolute bottom-0 w-full text-center bg-[#232323] text-white p-2 transform translate-y-full transition-transform duration-300">
+              <SkeletonLoader width="100px" height="20px" />
+            </div>
+          </div>
+        ))
+      )}
         </div>
       </div>
     </>

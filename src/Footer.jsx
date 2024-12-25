@@ -49,13 +49,26 @@ const Footer = () => {
         <div className=' flex flex-col gap-3'>
           <div className='font-[400] text-xl'>Reach Us</div>
           <div className='flex gap-2 items-start'>
-            <MdEmail className='w-auto h-[20px] text-white' />
-            <Link to='mailto:info@asios.in' className='w-[300px] sm:text-sm text-xs text-[#A3A3A3]'>info@asios.in</Link>
+            {/* <MdEmail className='w-auto h-[20px] text-white' /> */}
+            {/* <Link to='mailto:info@asios.in' className='w-[300px] sm:text-sm text-xs text-[#A3A3A3]'>info@asios.in</Link> */}
+            <Link to="mailto:info@asios.in" className='w-[300px] sm:text-sm text-xs text-white'><span className='w-[300px] sm:text-sm text-xs text-white mr-[14px]'>Email :</span> info@asios.in</Link>
           </div>
-          <div className='flex gap-2 items-start'>
+          {/* <div className='flex gap-2 items-start'>
             <FaPhoneAlt className='w-auto h-[20px] text-white' />
             <Link to='tel:9998299800' className='w-[300px] sm:text-sm text-xs text-[#A3A3A3]'>+91 9409000751 (Export)</Link>
-          </div>
+          </div> */}
+
+          <div className="flex gap-2">
+            <div className="sm:text-sm text-xs text-white">
+            {/* <FaPhoneAlt className='w-auto h-[20px] text-white' />
+             */}
+             Phone :
+            </div>
+            <div className="flex flex-col">
+              <Link to='tel:9409000751' className='w-[300px] sm:text-sm text-xs text-white'><span>+91 9409000751 (Export)</span></Link>
+              <Link to='tel:9327624243' className='w-[300px] sm:text-sm text-xs text-white' style={{lineHeight:'2.5'}}><span>+91 9327624243 (Domestic)</span></Link>
+            </div>
+          </div>  
 
         </div>
       </div>

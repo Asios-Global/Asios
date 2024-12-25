@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import SkeletonLoader from '../../SkeletonLoader';
 
 const Main_Product_details = () => {
   const { category } = useParams(); 
@@ -51,7 +52,17 @@ const Main_Product_details = () => {
                   </div>
                 ))
               ) : (
-                <p>No subcategories available.</p>
+                Array.from({ length: 10 }).map((_, index) => (
+                  <div
+                    className="relative group overflow-hidden cursor-pointer"
+                    key={index}
+                  >
+                    <SkeletonLoader width="350px" height="350px" />
+                    <div className="absolute bottom-0 w-full text-center bg-[#232323] text-white p-2 transform translate-y-full transition-transform duration-300">
+                      <SkeletonLoader width="100px" height="20px" />
+                    </div>
+                  </div>
+                ))
               )}
             </div>
           </div>

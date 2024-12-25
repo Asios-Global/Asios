@@ -35,7 +35,7 @@ const Header = () => {
   }, [isOpen]);
 
   return (
-    <div className='flex md:justify-around justify-between items-center py-3 px-4 bg-white shadow-md sticky top-0 z-10'>
+    <div className='flex md:justify-between  justify-between items-center py-2.5 px-[60px] bg-white shadow-md sticky top-0 z-10'>
       <div>
         <Link to="/">
           <img src={logo} className='w-auto h-12 object-cover' alt="Logo" />
