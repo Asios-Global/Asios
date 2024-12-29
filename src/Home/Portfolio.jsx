@@ -123,7 +123,7 @@ const Portfolio = () => {
                     className=" h-[350px] md:w-[400px] md:h-[400px] w-[350px] "
                   />
                     <p className="font-bold text-white">{item.title}</p>
-                    <div className="absolute bottom-0 w-full text-center bg-[#232323] text-white p-2">
+                    <div className="absolute bottom-0 w-full text-center bg-[#A42832] text-white p-2">
                       {item.category}
                     </div>
                 </div>

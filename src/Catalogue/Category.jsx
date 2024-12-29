@@ -53,32 +53,24 @@ const Category = ({ onSelectSubcategory }) => {
       {catalogueCategories.map((item, index) => (
         <div key={index} className="flex flex-col">
           <div
-            className="flex justify-between items-center p-3 cursor-pointer"
-            style={{
-              backgroundColor: openIndex === index ? "#a42832" : "#F5F5F5",
-              color: openIndex === index ? "#FFFFFF" : "#333333"
-            }}
+            className={`flex justify-between items-center p-3 cursor-pointer ${
+              openIndex === index ? "bg-[#a42832] text-white" : "bg-[#F5F5F5] text-[#333333]"
+            }`}
             onClick={() => handleToggle(index)}
+            aria-expanded={openIndex === index ? "true" : "false"}
           >
             <div className="flex items-center">
               <FaBook className="mr-2" />
-              <div className="text-lg font-semibold">
-                {item.cataloguecategory}
-              </div>
+              <div className="text-lg font-semibold">{item.cataloguecategory}</div>
             </div>
             <FaChevronDown
-              className={`transition-transform duration-300 ${
-                openIndex === index ? "rotate-180" : ""
-              }`}
-              style={{
-                color: openIndex === index ? "#FFFFFF" : "#888888"
-              }}
+              className={`transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`}
+              style={{ color: openIndex === index ? "#FFFFFF" : "#888888" }}
             />
           </div>
           {openIndex === index && (
             <ul
-              className="pl-20 cursor-pointer py-2 space-y-1 w-full"
-              style={{ backgroundColor: "#FFF8E1", color: "#333333" }}
+              className="pl-20 cursor-pointer py-2 space-y-1 w-full bg-[#FFF8E1] text-[#333333]"
             >
               {item.submenu.map((subitem, subIndex) => (
                 <li

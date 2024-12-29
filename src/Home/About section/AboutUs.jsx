@@ -2,7 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import image from "../../assets/about_us.jpg";
+// import image from "../../assets/about_us.jpg";
+import image from "../../assets/about.jpg"
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,19 +63,21 @@ const AboutUs = () => {
         >
           Asios is the name which is synonymous with qualitative products at the
           most competitive prices. Our customer-centric approach made us the
-          market leader in the ceramic industry. Clients are our most valuable
+          market leader in the building material industry. Clients are our most valuable
           asset. We believe in providing the best to our clients. We are the
           manufacturer where all your needs will get catered under one umbrella.
           Creating a good living environment for you at the best prices is our
           duty.
         </motion.p>
-
+        
+        <Link to="/about">
         <motion.button
           whileHover={{ scale: 1.1 }}
           className="mt-8 px-6 py-3 bg-primary text-white rounded-full shadow-lg"
         >
           Learn More
         </motion.button>
+        </Link>
       </div>
       <div className="lg:w-1/2 lg:block hidden">
         <img

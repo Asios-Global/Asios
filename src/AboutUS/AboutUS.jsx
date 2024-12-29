@@ -1,5 +1,6 @@
 import React from "react";
-import aboutus from "../assets/4.webp";
+// import aboutus from "../assets/4.webp";
+import aboutus from "../assets/about.jpg"
 import bg from "../assets/about/checks-bg.png";
 import aboutimg from "../assets/about/about_img.jpg";
 import { motion } from "framer-motion";
@@ -92,7 +93,7 @@ const AboutUS = () => {
                     <p>
                       Asios Global, based in Morbi City since 2021, has rapidly
                       established itself as a leading export company in the
-                      ceramics industry. Specializing in a diverse range of
+                      building material industry. Specializing in a diverse range of
                       products such as ceramic tiles, porcelain tiles, and
                       sanitaryware, Asios Global has built a reputation for
                       delivering high-quality goods to clients worldwide. With a

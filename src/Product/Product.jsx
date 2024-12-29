@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import product from "../assets/4.webp";
+// import product from "../assets/4.webp";
+import product from "../assets/product.jpg"
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import SkeletonLoader from "../SkeletonLoader";
@@ -55,7 +56,7 @@ const Product = () => {
                 className="md:w-[400px] md:h-[400px] w-[350px] h-[350px] object-cover"
                 alt={data.title}
               />
-              <div className="absolute bottom-0 w-full text-center bg-[#232323] text-white p-2 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+              <div className="absolute bottom-0 w-full text-center bg-[#A42832] text-white p-2 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
                 {data.category}
               </div>
             </Link>

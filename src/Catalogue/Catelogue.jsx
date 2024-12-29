@@ -81,7 +81,7 @@ const Catelogue = () => {
                     </div>
                     <div className="md:p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {catalogues.map((item) => (
-                            <div key={item.id} className="relative group mb-4 overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-2xl">
+                            <div key={item.id} className="relative group mb-4 overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-2xl w-[215px]">
                                 <img
                                     src={item.image} 
                                     className="w-full h-[300px] object-cover transition-transform duration-300 transform group-hover:scale-110"

@@ -43,9 +43,9 @@ const Header = () => {
       </div>
       <div className="hidden md:flex gap-4 sm:gap-6">
         <Link to="/" className=' hover:text-primary'>Home</Link>
-        <Link to='/product' className=' hover:text-primary'>Product</Link>
-        <Link to='/catalogue' className=' hover:text-primary'>E-Catalogue</Link>
         <Link to="/about" className=' hover:text-primary'>About</Link>
+        <Link to='/product' className=' hover:text-primary'>Products</Link>
+        <Link to='/catalogue' className=' hover:text-primary'>E-Catalogue</Link>
         <Link to='/contact' className=' hover:text-primary'>Contact</Link>
       </div>
       <div className="md:hidden flex items-center">

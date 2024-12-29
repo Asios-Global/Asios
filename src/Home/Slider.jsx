@@ -6,10 +6,11 @@ import "swiper/css/pagination";
 import { Navigation, Autoplay } from "swiper/modules";
 import { gsap } from "gsap";
 
-import b1 from "../assets/1.jpg";
-import b2 from "../assets/2.jpg";
-import b3 from "../assets/3.jpg";
-import b4 from "../assets/4.webp";
+import b1 from "../assets/Tiles1.jpg";
+import b2 from "../assets/sanitry.jpg";
+import b3 from "../assets/Tiles2.jpg";
+import b4 from "../assets/pvc1.jpg";
+// import b5 from "../assets/pvc2.jpeg"
 
 const splitText = (text) => {
   return text.split("").map((char, index) => (
@@ -21,11 +22,11 @@ const splitText = (text) => {
 
 const images = [
   {
-    src: b1,
-    alt: "Slide 1",
-    title: "Vitrified Tiles",
+    src: b3,
+    alt: "Slide 3",
+    title: "Porcelain Tiles",
     description:
-      "Vitrified tiles are durable, stain-resistant, and low-maintenance, making them ideal for both residential and commercial spaces. With a glossy finish and a variety of designs, they provide an elegant look while being suitable for high foot traffic areas."
+      "Porcelain tiles are known for their exceptional strength and water resistance. Available in an array of colors and patterns, they are perfect for flooring and walls, providing a sophisticated look. Their durability makes them ideal for both indoor and outdoor applications."
   },
   {
     src: b2,
@@ -35,19 +36,26 @@ const images = [
       "Sanitaryware includes essential bathroom fixtures such as sinks, toilets, and bathtubs, designed for both functionality and aesthetics. Available in various styles and finishes, they enhance hygiene and comfort in any bathroom while ensuring easy maintenance and long-lasting performance."
   },
   {
-    src: b3,
-    alt: "Slide 3",
-    title: "Porcelain Tiles",
+    src: b1,
+    alt: "Slide 1",
+    title: "Vitrified Tiles",
     description:
-      "Porcelain tiles are known for their exceptional strength and water resistance. Available in an array of colors and patterns, they are perfect for flooring and walls, providing a sophisticated look. Their durability makes them ideal for both indoor and outdoor applications."
+      "Vitrified tiles are durable, stain-resistant, and low-maintenance, making them ideal for both residential and commercial spaces. With a glossy finish and a variety of designs, they provide an elegant look while being suitable for high foot traffic areas."
   },
   {
     src: b4,
     alt: "Slide 4",
-    title: "Slab Tiles",
+    title: "Ceiling Panels",
     description:
-      "Slab tiles are large format tiles that offer a seamless and modern appearance. Ideal for both floors and walls, they come in various materials like stone and porcelain, providing a luxurious look. Their size minimizes grout lines, enhancing the overall aesthetic of any area."
-  }
+      "PVC Wall & Ceiling Panels are lightweight, durable, and easy to install, making them a popular choice for both residential and commercial spaces. Available in a variety of textures and finishes, these panels provide a modern look while offering excellent resistance to moisture, mold, and mildew. They are low-maintenance and perfect for transforming the look of interiors, creating a clean and stylish atmosphere in any room."
+  },
+  // {
+  //   src: b5,
+  //   alt: "Slide 4",
+  //   title: "Slab Tiles",
+  //   description:
+  //     "Slab tiles are large format tiles that offer a seamless and modern appearance. Ideal for both floors and walls, they come in various materials like stone and porcelain, providing a luxurious look. Their size minimizes grout lines, enhancing the overall aesthetic of any area."
+  // }
 ];
 
 const Banner = () => {
@@ -82,7 +90,7 @@ const Banner = () => {
       spaceBetween={0}
       centeredSlides={true}
       autoplay={{
-        delay: 10000,
+        delay: 3000,
         disableOnInteraction: false
       }}
       speed={2000}
@@ -113,7 +121,7 @@ const Banner = () => {
               className="w-full h-full object-cover transition-transform duration-500 transform hover:scale-110"
             />
             <div className="absolute inset-0 bg-black opacity-30"></div>
-            <div className="absolute md:top-[30%] md:left-5 md:text-left text-center p-4">
+            <div className="absolute md:top-[60%] md:left-5 md:text-left text-center p-4">
               <h2
                 className="lg:text-4xl sm:text-3xl text-xl font-bold text-white mb-4"
                 ref={(el) => (titleRefs.current[index] = el)}
