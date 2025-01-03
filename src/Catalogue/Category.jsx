@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FaChevronDown, FaBook } from "react-icons/fa";
+import { LuDot } from "react-icons/lu";
 
 const Category = ({ onSelectSubcategory }) => {
   const [catalogueCategories, setCatalogueCategories] = useState([]);
@@ -49,7 +50,7 @@ const Category = ({ onSelectSubcategory }) => {
   };
 
   return (
-    <div className="lg:w-[300px] md:w-[250px] w-full mx-auto">
+    <div className="lg:w-[300px] md:w-[250px] w-full mx-auto sticky top-32">
       {catalogueCategories.map((item, index) => (
         <div key={index} className="flex flex-col">
           <div
@@ -73,6 +74,8 @@ const Category = ({ onSelectSubcategory }) => {
               className="pl-20 cursor-pointer py-2 space-y-1 w-full bg-[#FFF8E1] text-[#333333]"
             >
               {item.submenu.map((subitem, subIndex) => (
+                <div className=" flex gap-2 items-center">
+                <LuDot  size={24}/>
                 <li
                   key={subIndex}
                   className="text-sm hover:text-primary transition-colors delay-100"
@@ -80,6 +83,7 @@ const Category = ({ onSelectSubcategory }) => {
                 >
                   {subitem}
                 </li>
+                </div>
               ))}
             </ul>
           )}
