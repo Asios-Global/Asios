@@ -10,7 +10,7 @@ import b1 from "../assets/Tiles1.jpg";
 import b2 from "../assets/sanitry.jpg";
 import b3 from "../assets/Tiles2.jpg";
 import b4 from "../assets/pvc1.jpg";
-// import b5 from "../assets/pvc2.jpeg"
+import b5 from "../assets/celing panel.jpg"
 
 const splitText = (text) => {
   return text.split("").map((char, index) => (
@@ -45,17 +45,17 @@ const images = [
   {
     src: b4,
     alt: "Slide 4",
+    title: "Polymer Wall Panels",
+    description:
+      "PVC Wall Panels are lightweight, durable, and easy to install, making them a popular choice for both residential and commercial spaces. Available in a variety of textures and finishes, these panels offer a sleek and modern aesthetic while providing exceptional resistance to moisture, mold, and mildew. Low-maintenance and versatile, they are ideal for transforming the look of interiors, enhancing any room with a clean, stylish, and contemporary atmosphere."
+  },
+  {
+    src: b5,
+    alt: "Slide 4",
     title: "Ceiling Panels",
     description:
-      "PVC Wall & Ceiling Panels are lightweight, durable, and easy to install, making them a popular choice for both residential and commercial spaces. Available in a variety of textures and finishes, these panels provide a modern look while offering excellent resistance to moisture, mold, and mildew. They are low-maintenance and perfect for transforming the look of interiors, creating a clean and stylish atmosphere in any room."
-  },
-  // {
-  //   src: b5,
-  //   alt: "Slide 4",
-  //   title: "Slab Tiles",
-  //   description:
-  //     "Slab tiles are large format tiles that offer a seamless and modern appearance. Ideal for both floors and walls, they come in various materials like stone and porcelain, providing a luxurious look. Their size minimizes grout lines, enhancing the overall aesthetic of any area."
-  // }
+      "Transform your space with our high-quality PVC Ceiling Panels, designed to offer both aesthetic appeal and long-lasting performance.Available in a variety of elegant finishes, they are resistant to moisture and provide superior durability, making them ideal for spaces prone to humidity. With minimal maintenance required, our ceiling panels bring a contemporary touch while helping to improve acoustics and create a polished, refined atmosphere in your interiors."
+  }
 ];
 
 const Banner = () => {

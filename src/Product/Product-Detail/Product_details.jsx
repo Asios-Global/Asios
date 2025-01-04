@@ -61,7 +61,7 @@ const Product_details = () => {
 "
                           style={{width:'550px'}}
                         />
-                        <div className="mt-1 font-medium text-lg uppercase hover:underline hover:transition-all hover:duration-300 text-center">
+                        <div className="mt-1 font-medium text-lg uppercase hover:underline hover:transition-all hover:duration-300 text-center text-nowrap">
                           {product.productName}
                         </div>
                       </Link>

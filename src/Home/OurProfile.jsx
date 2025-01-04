@@ -8,17 +8,17 @@ import { motion } from 'framer-motion';
 const servicesList = [
     {
         head: 'Company Profile',
-        para: 'Headquartered in Morbi (Ceramic Capital of India), Asios Ceramic has always stood out from the crowd. It emerged with the objective of creating a material category suitable for interior and exterior construction.',
+        para: 'Headquartered in Morbi (Ceramic Capital of India), Asios global has always stood out from the crowd. It emerged with the objective of creating a material category suitable for interior and exterior construction.',
         icon: service1,
     },
     {
         head: 'Infrastructure',
-        para: 'The strength and success of Asios Ceramic lies in its sound infrastructure which has advanced manufacturing facilities that comprises of latest machinery and advent-grade technologies.',
+        para: 'The strength and success of Asios global lies in its sound infrastructure which has advanced manufacturing facilities that comprises of latest machinery and advent-grade technologies.',
         icon: service3,
     },
     {
         head: 'Export Coverage',
-        para: 'High performance levels and refined aesthetic quality, have made Asios Ceramic products greatly acknowledged by numerous industry experts in the international panorama.',
+        para: 'High performance levels and refined aesthetic quality, have made Asios global products greatly acknowledged by numerous industry experts in the international panorama.',
         icon: service2,
     },
 ];

@@ -30,7 +30,7 @@ const commitment = [
 const card = [
   {
     title: "Foundations of Excellence",
-    desc: "In 2019, Asios laid the cornerstone for a journey dedicated to tile craftsmanship. With a vision of redefining spaces, we embarked on a mission to offer unparalleled quality and design. This marked the beginning of a legacy built on precision and passion."
+    desc: "In 2017, Asios laid the cornerstone for a journey dedicated to tile craftsmanship. With a vision of redefining spaces, we embarked on a mission to offer unparalleled quality and design. This marked the beginning of a legacy built on precision and passion."
   },
   {
     title: "Innovation Unleashed",
@@ -94,8 +94,7 @@ const AboutUS = () => {
                       Asios Global, based in Morbi City since 2021, has rapidly
                       established itself as a leading export company in the
                       building material industry. Specializing in a diverse range of
-                      products such as ceramic tiles, porcelain tiles, and
-                      sanitaryware, Asios Global has built a reputation for
+                      products such as porcelain tiles, bath ware and decorative panels, Asios Global has built a reputation for
                       delivering high-quality goods to clients worldwide. With a
                       commitment to excellence and customer satisfaction, the
                       company has become a trusted name in the global market,

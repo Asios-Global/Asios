@@ -103,7 +103,7 @@ const Second_product_details = () => {
                   src={product.image}
                   alt={product.productName}
                   className={`h-[350px] w-[350px] sm:h-[400px] sm:w-[400px] cursor-pointer ${
-                    product?.category === "Tiles" || product.category === "Decorative Wall & Ceiling Panel" || product.category === "Quartz Slab"
+                    product?.category === "Tiles" || product.category === "Decorative Wall & Ceiling Panel" || product.category === "Quartz Slab" || product.category === "Other Products"
                       ? "border-[#dfdfdf] border object-cover"
                       : "object-contain"
                   }`}
