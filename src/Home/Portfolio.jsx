@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,10 +7,11 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination, Mousewheel } from "swiper/modules";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { AppContext } from "../AppContext";
 
 const Portfolio = () => {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
-
+  const { setFooterData } = useContext(AppContext);
   const [portfoliodata, setPortfoliodata] = useState([]);
 
   useEffect(() => {
@@ -20,13 +21,14 @@ const Portfolio = () => {
           `${baseURL}/category/getAllCategories`
         );
         setPortfoliodata(response.data.data);
+        setFooterData(response.data.data);
       } catch (error) {
         console.error("Error fetching category data:", error);
       }
     };
 
     fetchData();
-  }, [baseURL]);
+  }, [baseURL,setFooterData]);
 
   return (
     <div className="container py-20">

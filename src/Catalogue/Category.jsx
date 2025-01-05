@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FaChevronDown, FaBook } from "react-icons/fa";
-import { LuDot } from "react-icons/lu";
 
 const Category = ({ onSelectSubcategory }) => {
   const [catalogueCategories, setCatalogueCategories] = useState([]);
   const [openIndex, setOpenIndex] = useState(null);
+  const [selectedSubcategories, setSelectedSubcategories] = useState([]);
   const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
@@ -45,9 +45,19 @@ const Category = ({ onSelectSubcategory }) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const handleSubcategorySelect = (subcategory) => {
-    onSelectSubcategory(subcategory);
+  const handleCheckboxChange = (subcategory) => {
+    setSelectedSubcategories((prevSelected) => {
+      if (prevSelected.includes(subcategory)) {
+        return prevSelected.filter((item) => item !== subcategory);
+      } else {
+        return [...prevSelected, subcategory];
+      }
+    });
   };
+
+  useEffect(() => {
+    onSelectSubcategory(selectedSubcategories);  // Pass the selected subcategories to parent component
+  }, [selectedSubcategories, onSelectSubcategory]);
 
   return (
     <div className="lg:w-[300px] md:w-[250px] w-full mx-auto sticky top-32">
@@ -74,15 +84,19 @@ const Category = ({ onSelectSubcategory }) => {
               className="pl-20 cursor-pointer py-2 space-y-1 w-full bg-[#FFF8E1] text-[#333333]"
             >
               {item.submenu.map((subitem, subIndex) => (
-                <div className=" flex gap-2 items-center">
-                <LuDot  size={24}/>
-                <li
-                  key={subIndex}
-                  className="text-sm hover:text-primary transition-colors delay-100"
-                  onClick={() => handleSubcategorySelect(subitem)}
-                >
-                  {subitem}
-                </li>
+                <div key={subIndex} className="flex gap-2 items-center">
+                  {/* Checkbox */}
+                  <input
+                    type="checkbox"
+                    id={subitem}
+                    value={subitem}
+                    checked={selectedSubcategories.includes(subitem)}
+                    onChange={() => handleCheckboxChange(subitem)}
+                    className="cursor-pointer"
+                  />
+                  <label htmlFor={subitem} className="text-sm hover:text-primary transition-colors delay-100">
+                    {subitem}
+                  </label>
                 </div>
               ))}
             </ul>

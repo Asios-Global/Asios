@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from './assets/Logo-bg.png'
 import { IoLocationSharp } from "react-icons/io5";
 import { Link } from 'react-router-dom';
@@ -7,7 +7,11 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import { AppContext } from './AppContext';
 const Footer = () => {
+
+  const { footerData } = useContext(AppContext);
+  const data = footerData
   return (
     <div className='md:px-20  px-8 py-12 bg-black text-white '>
       <div className='flex justify-between  items-start gap-5 sm:gap-3 sm:flex-row  flex-wrap'>
@@ -23,50 +27,60 @@ const Footer = () => {
           </div>
         </div>
         <div className=' flex flex-col gap-3'>
-          <div className='font-[400] text-xl'>Quick Link</div>
+          <div className='font-[600] text-xl'>Quick Link</div>
           <div className='flex flex-col gap-2 items-start text-white '>
-            <Link to="/" className="hover:text-white">Home</Link>
-            <Link to="/product" className="hover:text-white">Products</Link>
-            <Link to="/catalogue" className="hover:text-white">E-catalogue</Link>
-            <Link to="/about" className="hover:text-white">About Us</Link>
-            <Link to="/contact" className="hover:text-white">Contact Us</Link>
+            <Link to="/" className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300">Home</Link>
+            <Link to="/product" className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300">Products</Link>
+            <Link to="/catalogue" className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300">E-catalogue</Link>
+            <Link to="/about" className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300">About Us</Link>
+            <Link to="/contact" className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300">Contact Us</Link>
           </div>
         </div>
+
         <div className=' flex flex-col gap-3'>
-          <div className='font-[400] text-xl'>Our Address</div>
+          <div className='font-[600] text-xl'>Products</div>
+          <div className='flex flex-col gap-2 items-start text-white '>
+          {data && data.length > 0 && (
+              data.map((item) => (
+                <Link
+                  to={`/main-product/${item.category}`}
+                  key={item._id}
+                  className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300"
+                >
+                  {item.category}
+                </Link>
+              ))
+            )}
+          </div>
+        </div>
+
+        <div className=' flex flex-col gap-3'>
+          <div className='font-[600] text-xl'>Our Address</div>
           <div className='flex gap-2 items-start'>
     <IoLocationSharp className='w-auto sm:h-[25px] h-[20px] text-white' />
     <a
         href="https://www.google.com/maps/place/ASIOS+GLOBAL/@22.8141528,70.8669576,17z/data=!3m1!4b1!4m6!3m5!1s0x39598df7d1a60d67:0x24006f9a055d9da2!8m2!3d22.8141528!4d70.8695325!16s%2Fg%2F11pzvtscyp?entry=ttu&g_ep=EgoyMDI0MTAyNy4wIKXMDSoASAFQAw%3D%3D"
         target="_blank"
         rel="noopener noreferrer"
-        className='sm:w-[300px] w-full sm:text-sm text-xs text-white'
+        className='sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300'
     >
         Latest Ceramic Zone, 1st Floor, B/H Ishan Ceramic Zone 8-A, National Highway, Morbi, Gujarat 363642
     </a>
 </div>
         </div>
         <div className=' flex flex-col gap-3'>
-          <div className='font-[400] text-xl'>Reach Us</div>
-          <div className='flex gap-2 items-start'>
-            {/* <MdEmail className='w-auto h-[20px] text-white' /> */}
-            {/* <Link to='mailto:info@asios.in' className='w-[300px] sm:text-sm text-xs text-[#A3A3A3]'>info@asios.in</Link> */}
-            <Link to="mailto:info@asios.in" className='w-[300px] sm:text-sm text-xs text-white'><span className='w-[300px] sm:text-sm text-xs text-white mr-[14px]'>Email :</span> info@asios.in</Link>
+          <div className='font-[600] text-xl w-fit'>Reach Us</div>
+          <div className='flex items-start w-fit'>
+            <span className='sm:text-sm text-xs text-white mr-[20px]'>Email :</span>
+            <Link to="mailto:info@asios.in" className='w-fit sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300'> info@asios.in</Link>
           </div>
-          {/* <div className='flex gap-2 items-start'>
-            <FaPhoneAlt className='w-auto h-[20px] text-white' />
-            <Link to='tel:9998299800' className='w-[300px] sm:text-sm text-xs text-[#A3A3A3]'>+91 9409000751 (Export)</Link>
-          </div> */}
-
-          <div className="flex gap-2">
+          <div className="flex gap-2 w-fit">
             <div className="sm:text-sm text-xs text-white">
-            {/* <FaPhoneAlt className='w-auto h-[20px] text-white' />
-             */}
              Phone :
             </div>
             <div className="flex flex-col">
-              <Link to='tel:9409000751' className='w-[300px] sm:text-sm text-xs text-white'><span>+91 9409000751 (Export)</span></Link>
-              <Link to='tel:9327624243' className='w-[300px] sm:text-sm text-xs text-white' style={{lineHeight:'2.5'}}><span>+91 9327624243 (Domestic)</span></Link>
+              <Link to='tel:9409000751' className='w-fit sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300'><span>+91 9409000751 (Export)</span></Link>
+              <Link to='tel:9327624243' className='w-fit sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300' style={{lineHeight:'2.5'}}><span>+91 9327624243 (Domestic)</span></Link>
             </div>
           </div>  
 
