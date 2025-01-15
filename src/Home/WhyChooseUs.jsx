@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import service1 from "../assets/office-building.png";
-import service2 from "../assets/logistics.png";
-import service3 from "../assets/construction-site.png";
 import best_price from "../assets/WhyChoose Us/best-price.png";
 import customer from "../assets/WhyChoose Us/customer.png";
 import design from "../assets/WhyChoose Us/design.png";

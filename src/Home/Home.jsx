@@ -7,6 +7,7 @@ import OurProfile from './OurProfile';
 import AboutUs from './About section/AboutUs';
 import Cerification from '../AboutUS/Cerification';
 import GlobalFootprint from '../AboutUS/GlobalFootprint';
+import ExportSection from './ExportSection';
 const Home = () => {
     return (
         <div className='relative'>
@@ -17,9 +18,9 @@ const Home = () => {
             <OurProfile />
             <Portfolio />
             <WhyChooseUs />
-            <Cerification />
-            <GlobalFootprint />
-
+            {/* <Cerification /> */}
+            {/* <GlobalFootprint /> */}
+            <ExportSection />
             </div>
             </ErrorBoundary>
         </div>

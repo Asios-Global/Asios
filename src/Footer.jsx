@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import logo from './assets/Logo-bg.png'
+import logo from '../src/assets/asios_logo.svg'
 import { IoLocationSharp } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import { MdEmail } from "react-icons/md";
@@ -37,7 +37,17 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className=' flex flex-col gap-3'>
+        <div className=' flex flex-col gap-3 lg:ml-6 md:ml-4'>
+          <div className='font-[600] text-xl'>Information</div>
+          <div className='flex flex-col gap-2 items-start text-white '>
+          <Link className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300" to='/tiles-calculator'>Tiles Calculator</Link>
+          <Link className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300" to='/packing-details'>Packing Details</Link>
+          <Link className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300" to='/quality-assurance'>Quality Assurance</Link>
+          <Link className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300" to='/sample-request'>Sample Request</Link>
+          <Link className="'sm:w-[300px] w-full sm:text-sm text-xs text-white hover:text-[#A42832] transition-colors duration-300" to='/customization'>Customization</Link>
+          </div>
+        </div>
+        <div className=' flex flex-col gap-3 lg:ml-6 md:ml-4'>
           <div className='font-[600] text-xl'>Products</div>
           <div className='flex flex-col gap-2 items-start text-white '>
           {data && data.length > 0 && (

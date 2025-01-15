@@ -173,14 +173,14 @@ const AboutUS = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white">
-            <div className=" ">
-              <GlobalFootprint />
-            </div>
-          </div>
           <div className="">
             <div className=" ">
               <Cerification />
+            </div>
+          </div>
+          <div className="bg-white">
+            <div className=" ">
+              <GlobalFootprint />
             </div>
           </div>
         </div>

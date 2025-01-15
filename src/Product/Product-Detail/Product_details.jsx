@@ -57,8 +57,18 @@ const Product_details = () => {
                       <Link to={`/product-detail/${product._id}`}>
                         <img
                           src={product.image || "fallback-image.jpg"}
-                          className="sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] w-[350px] h-[350px] object-cover hover:opacity-90 border border-[#dfdfdf]
-"
+                          className={`sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] w-[350px] h-[350px] hover:opacity-90
+                            ${
+                              (product?.category === "Tiles" && (product.subcategory != "Wooden Strip Tiles") && (product.subcategory != "Subway Tiles") && (product.subcategory != "Elevation Wall Tiles")) 
+                              || (product.category === "Decorative Wall & Ceiling Panel" && (product.subcategory === "Soffit Ceiling Panel")) 
+                              || product.category === "Quartz Slab" 
+                              ||product.category === "Other Products"
+          
+                                ? "border-[#dfdfdf] border object-cover"
+          
+                                : "object-contain"
+                            }
+                            `}
                           style={{width:'550px'}}
                         />
                         <div className="mt-1 font-medium text-lg uppercase hover:underline hover:transition-all hover:duration-300 text-center text-nowrap">

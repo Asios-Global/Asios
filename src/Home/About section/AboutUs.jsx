@@ -59,7 +59,7 @@ const AboutUs = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="mt-4 lg:text-[16px] text-sm text-justify "
+          className="mt-4 lg:text-[16px] text-sm text-justify"
         >
           Asios is the name which is synonymous with qualitative products at the
           most competitive prices. Our customer-centric approach made us the
@@ -75,7 +75,7 @@ const AboutUs = () => {
           whileHover={{ scale: 1.1 }}
           className="mt-8 px-6 py-3 bg-primary text-white rounded-full shadow-lg"
         >
-          Learn More
+          Know More
         </motion.button>
         </Link>
       </div>
