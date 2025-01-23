@@ -18,6 +18,7 @@ import QualityAssurance from "./Information/QualityAssurance";
 import SampleRequest from "./Information/SampleRequest";
 import Customization from "./Information/Customization";
 import ScrollToTop from "./ScrollToTop";
+import NotFound from "./NotFound";
 
 const DisableRightClickAndShortcuts = () => {
   React.useEffect(() => {
@@ -76,6 +77,7 @@ function App() {
           <Route path="/quality-assurance" element={<QualityAssurance />} />
           <Route path="/sample-request" element={<SampleRequest />} />
           <Route path="/customization" element={<Customization />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
         </ScrollToTop>

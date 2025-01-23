@@ -107,12 +107,12 @@ const ContactUS = () => {
                 Phone :
               </div>
               <div className="flex flex-col">
-              <Link to='tel:9409000751'><span>+91 9409000751 (Export)</span></Link>
-              <Link to='tel:9327624243'><span>+91 9327624243 (Domestic)</span></Link>
+              <p><Link to='tel:9409000751'><span>+91 9409000751 (Export)</span></Link></p>
+              <p><Link to='tel:9327624243'><span>+91 9327624243 (Domestic)</span></Link></p>
               </div>
               </div>  
               {/* </Link> */}
-              <Link to="mailto:info@asios.in"><span className="font-bold mr-[13px]">Email :</span> info@asios.in</Link>
+              <p><Link to="mailto:info@asios.in"><span className="font-semibold mr-[8px]">Email :</span> info@asios.in</Link></p>
               <a href="https://maps.app.goo.gl/prVMzFBLSudXRiLd9" 
                 target="_blank" >
                 <p>

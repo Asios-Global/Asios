@@ -62,7 +62,9 @@ const Header = () => {
           About
         </Link>
         <div className="relative group">
-          <button className="hover:text-primary">Products</button>
+          <Link to="/product" className=" hover:text-primary">
+            Products
+          </Link>
           <div className="absolute left-0 w-48 space-y-2 pt-[25px] bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible">
             {data &&
               data.length > 0 &&
