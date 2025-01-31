@@ -96,6 +96,9 @@ const Footer = () => {
 
         </div>
       </div>
+      <div className=' mt-5 border-t-[1px] border-gray'>
+      <span className='sm:w-[300px] w-full sm:text-sm text-xs text-white'>@2025 Asios Global. All Rights Reserved </span>
+      </div>
     </div>
   )
 }
