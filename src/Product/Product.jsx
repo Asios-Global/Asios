@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 // import product from "../assets/4.webp";
-import product from "../assets/product.jpg"
+import product from "../assets/product.webp"
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import SkeletonLoader from "../SkeletonLoader";

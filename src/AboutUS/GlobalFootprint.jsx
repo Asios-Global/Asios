@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/countries.png";
+import img from "../assets/countries.webp";
 const GlobalFootprint = () => {
   return (
     <div className="container lg:pb-20 py-14">

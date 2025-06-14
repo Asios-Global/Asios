@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import exportHeader from "../assets/export-header.jpg"
-import exportPage from "../assets/export-page.jpg"
+import exportHeader from "../assets/export-header.webp"
+import exportPage from "../assets/export-page.webp"
 import GlobalFootprint from "../AboutUS/GlobalFootprint";
 
 
@@ -29,7 +29,7 @@ const Export = () => {
         </motion.div>
       </div>
 
-      <section className="flex flex-col lg:flex-row items-center justify-center bg-white">
+      <section className="flex flex-col lg:flex-row items-center justify-center bg-white container">
         {/* Left side - Image */}
         <div className="w-full lg:w-1/2 relative">
           <img
@@ -53,7 +53,7 @@ const Export = () => {
 
         </p>
         <p className="text-gray-600 leading-relaxed mb-6 text-justify">
-        Our strong logistics network and global supply chain capabilities enable us to export tiles efficiently and reliably to international destinations. Whether for residential, commercial, or industrial spaces, our building materials are crafted to enhance both the aesthetic and functional appeal of any environment. Partner with Asios Global for building materials that combine style, durability, and cost-effectiveness—making us a trusted choice for customers worldwide.
+        Our strong logistics network and global supply chain capabilities enable us to export tiles efficiently and reliably to international destinations. Whether for residential, commercial, or industrial spaces, our building materials are crafted to enhance both the aesthetic and functional appeal of any environment. Partner with Asios Global for building materials that combine style, durability, and cost-effectiveness.
         </p>
         </div>
 

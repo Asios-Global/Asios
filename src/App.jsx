@@ -20,38 +20,38 @@ import Customization from "./Information/Customization";
 import ScrollToTop from "./ScrollToTop";
 import NotFound from "./NotFound";
 
-const DisableRightClickAndShortcuts = () => {
-  React.useEffect(() => {
-    const handleRightClick = (event) => {
-      event.preventDefault();
-    };
+// const DisableRightClickAndShortcuts = () => {
+//   React.useEffect(() => {
+//     const handleRightClick = (event) => {
+//       event.preventDefault();
+//     };
 
-    // Disable F12 key
-    const handleF12 = (event) => {
-      if (event.key === 'F12') {
-        event.preventDefault();
-      }
-    };
+//     // Disable F12 key
+//     const handleF12 = (event) => {
+//       if (event.key === 'F12') {
+//         event.preventDefault();
+//       }
+//     };
 
-    const handleCtrlShiftI = (event) => {
-      if (event.ctrlKey && event.shiftKey && event.key === 'I') {
-        event.preventDefault();
-      }
-    };
+//     const handleCtrlShiftI = (event) => {
+//       if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+//         event.preventDefault();
+//       }
+//     };
 
-    window.addEventListener('contextmenu', handleRightClick);
-    window.addEventListener('keydown', handleF12); 
-    window.addEventListener('keydown', handleCtrlShiftI); 
+//     window.addEventListener('contextmenu', handleRightClick);
+//     window.addEventListener('keydown', handleF12); 
+//     window.addEventListener('keydown', handleCtrlShiftI); 
 
-    return () => {
-      window.removeEventListener('contextmenu', handleRightClick);
-      window.removeEventListener('keydown', handleF12);
-      window.removeEventListener('keydown', handleCtrlShiftI);
-    };
-  }, []);
+//     return () => {
+//       window.removeEventListener('contextmenu', handleRightClick);
+//       window.removeEventListener('keydown', handleF12);
+//       window.removeEventListener('keydown', handleCtrlShiftI);
+//     };
+//   }, []);
 
-  return null; 
-};
+//   return null; 
+// };
 
 
 
@@ -59,7 +59,7 @@ function App() {
   return (
     <AppProvider>
       <React.Fragment>
-        <DisableRightClickAndShortcuts />
+        {/* <DisableRightClickAndShortcuts /> */}
         <ScrollToTop>
         <Header />
         <Routes>

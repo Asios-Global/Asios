@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import customization from "../assets/customization.png";
-import customizationcover from "../assets/customizationcover.jpg";
+import customizationcover from "../assets/customizationcover.webp";
 const Customization = () => {
   return (
     <>

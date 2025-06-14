@@ -4,7 +4,7 @@ import productInspection from "../assets/duproductionInspection.jpg";
 import sampleMatching from "../assets/sampleMatching.jpg";
 import preShipment from "../assets/preShipment.jpg";
 import sampleReport from "../assets/SampleReportIMG.jpg";
-import QcCover from "../assets/qc.jpg";
+import QcCover from "../assets/qc.webp";
 import loading from "../assets/loading.png";
 import { FaDownload, FaEye } from "react-icons/fa";
 

@@ -1,8 +1,8 @@
 import React from "react";
 // import aboutus from "../assets/4.webp";
-import aboutus from "../assets/about.jpg"
+import aboutus from "../assets/about.webp"
 import bg from "../assets/about/checks-bg.png";
-import aboutimg from "../assets/about/about_img.jpg";
+import aboutimg from "../assets/about/about_img.webp";
 import { motion } from "framer-motion";
 import GlobalFootprint from "./GlobalFootprint";
 import Cerification from "./Cerification";

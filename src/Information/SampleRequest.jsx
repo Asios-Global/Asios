@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import sampleCover2 from '../assets/samplecover2.jpg';
+import sampleCover2 from '../assets/samplecover2.webp';
 import axios from "axios";
 
 const SampleRequest = () => {

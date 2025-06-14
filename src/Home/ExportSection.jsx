@@ -1,11 +1,11 @@
 import React from 'react';
-import exportImg from "../assets/export.jpg";
+import exportImg from "../assets/export.webp";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
 const ExportSection = () => {
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-center bg-white">
+    <section className="flex flex-col lg:flex-row items-center justify-center bg-white container">
       {/* Left side - Image */}
       <div className="w-full lg:w-1/2 relative">
         <img
@@ -29,7 +29,7 @@ const ExportSection = () => {
 
         </p>
         <p className="lg:text-[16px] text-sm mb-6 text-justify">
-        Our strong logistics network and global supply chain capabilities enable us to export tiles efficiently and reliably to international destinations. Whether for residential, commercial, or industrial spaces, our building materials are crafted to enhance both the aesthetic and functional appeal of any environment. Partner with Asios Global for building materials that combine style, durability, and cost-effectiveness—making us a trusted choice for customers worldwide.
+        Our strong logistics network and global supply chain capabilities enable us to export tiles efficiently and reliably to international destinations. Whether for residential, commercial, or industrial spaces, our building materials are crafted to enhance both the aesthetic and functional appeal of any environment. Partner with Asios Global for building materials that combine style, durability, and cost-effectiveness.
         </p>  
         <Link to="/export">
         <motion.button

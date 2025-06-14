@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import image from "../../assets/about_us.jpg";
-import image from "../../assets/about.jpg"
+import image from "../../assets/about.webp"
 import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);

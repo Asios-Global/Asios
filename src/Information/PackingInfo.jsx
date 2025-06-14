@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import packingImg from "../assets/packing.jpeg"
+import packingImg from "../assets/packing.webp"
 
 const PackingInfo = () => {
     const data = [

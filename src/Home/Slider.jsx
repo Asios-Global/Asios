@@ -6,11 +6,11 @@ import "swiper/css/pagination";
 import { Navigation, Autoplay } from "swiper/modules";
 import { gsap } from "gsap";
 
-import b1 from "../assets/Tiles1.jpg";
-import b2 from "../assets/sanitry.jpg";
-import b3 from "../assets/Tiles2.jpg";
-import b4 from "../assets/pvc1.jpg";
-import b5 from "../assets/celing panel.jpg"
+import b1 from "../assets/Tiles1.webp";
+import b2 from "../assets/sanitry.webp";
+import b3 from "../assets/Tiles2.webp";
+import b4 from "../assets/pvc1.webp";
+import b5 from "../assets/celing-panel.webp"
 
 const splitText = (text) => {
   return text.split("").map((char, index) => (

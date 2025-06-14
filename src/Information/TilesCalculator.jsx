@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import tileCalc from '../assets/tile-calc.jpeg';
+import tileCalc from '../assets/tile-calc.webp';
 
 const TilesCalculator = () => {
   // State variables

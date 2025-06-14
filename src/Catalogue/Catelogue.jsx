@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import banner from '../assets/catelogue-bg.jpg';
+import banner from '../assets/catelogue-bg.webp';
 import { motion } from 'framer-motion';
 import Category from './Category';
 import { FaDownload, FaEye } from 'react-icons/fa';
