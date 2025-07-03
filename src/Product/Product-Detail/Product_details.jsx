@@ -62,7 +62,7 @@ const Product_details = () => {
                               (product?.category === "Tiles" && (product.subcategory != "Wooden Strip Tiles") && (product.subcategory != "Subway Tiles") && (product.subcategory != "Elevation Wall Tiles")) 
                               || (product.category === "Decorative Wall & Ceiling Panel" && (product.subcategory === "Soffit Ceiling Panel")) 
                               || product.category === "Quartz Slab" 
-                              ||product.category === "Other Products"
+                              ||(product.category === "Other Products" && !product.subcategory === 'ROOFING SHEET')
           
                                 ? "border-[#dfdfdf] border object-cover"
           
@@ -71,7 +71,7 @@ const Product_details = () => {
                             `}
                           style={{width:'550px'}}
                         />
-                        <div className="mt-1 font-medium text-lg uppercase hover:underline hover:transition-all hover:duration-300 text-center text-nowrap">
+                        <div className="mt-1 font-medium text-lg uppercase hover:underline hover:transition-all hover:duration-300 text-center">
                           {product.productName}
                         </div>
                       </Link>
