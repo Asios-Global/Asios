@@ -1,88 +1,102 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-
-const blogPosts = [
-  {
-    id: 1,
-    date: "03 July, 2025",
-    title: "How to Automate Boring Tasks with Python and PyAutoGUI",
-    description:
-      "In today's fast-paced digital world, maximizing efficiency is more important than ever. Repetitive...",
-    gradient: "from-blue-900 via-purple-900 to-blue-800",
-    accentColor: "bg-yellow-400",
-  },
-  {
-    id: 2,
-    date: "02 July, 2025",
-    title: "Scalable MEAN Stack Deployment Backed by Expert Development Services",
-    description:
-      "Building scalable web applications demands robust frameworks and skilled hands to turn an idea into a...",
-    gradient: "from-purple-900 via-blue-900 to-purple-800",
-    accentColor: "bg-yellow-400",
-  },
-  {
-    id: 3,
-    date: "02 July, 2025",
-    title: "Static Site Output with Nuxt Generation Models: Insights from a Nuxt JS Development...",
-    description: "Web development is now being more and more focused on quick loading, secure, and optimized...",
-    gradient: "from-gray-900 via-green-900 to-gray-800",
-    accentColor: "bg-green-400",
-  },
-  {
-    id: 4,
-    date: "02 July, 2025",
-    title: "API Layer Integration with Next.js Endpoints: A Guide for Next.js Developers",
-    description: "With the growing demand for modern web applications to exchange dynamic data, creating a...",
-    gradient: "from-blue-900 via-teal-900 to-blue-800",
-    accentColor: "bg-teal-400",
-  },
-  {
-    id: 5,
-    date: "02 July, 2025",
-    title: "Magento eCommerce Development: Custom Theme Development Best Practices",
-    description:
-      "The process of setting up online stores goes beyond simply loading products and getting customers to...",
-    gradient: "from-blue-900 via-cyan-900 to-blue-800",
-    accentColor: "bg-cyan-400",
-  },
-  {
-    id: 6,
-    date: "01 July, 2025",
-    title: "Dynamic Routing Features in Next.js Applications",
-    description: "Dynamic routing is a key feature in Next.js applications, allowing developers to build scalable...",
-    gradient: "from-purple-900 via-indigo-900 to-purple-800",
-    accentColor: "bg-yellow-400",
-  },
-]
+import React, { useState, useEffect } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 
 const BlogDetail = () => {
   const { id } = useParams();
-  const post = blogPosts.find((p) => String(p.id) === String(id));
+  const { state } = useLocation();
+  const [post, setPost] = useState(state?.post || null);
+  const [loading, setLoading] = useState(!state?.post);
+  const [error, setError] = useState(null);
 
-  if (!post) return <div className="min-h-screen flex items-center justify-center text-xl">No blog post found.</div>
+  useEffect(() => {
+    const fetchPostIfNeeded = async () => {
+      if (post) return;
+
+      try {
+        const response = await fetch('https://asios-server.vercel.app/api/blog/get-blog');
+        if (!response.ok) throw new Error('Failed to fetch blog post');
+
+        const result = await response.json();
+        const foundPost = result.data?.find((p) => String(p.$id) === String(id));
+
+        if (foundPost) {
+          setPost({
+            id: foundPost.$id,
+            title: foundPost.title,
+            content: foundPost.content,
+            imageUrl: foundPost.imageUrl,
+            date: new Date(foundPost.$createdAt).toLocaleDateString('en-US', {
+              day: '2-digit',
+              month: 'long',
+              year: 'numeric'
+            }),
+            $createdAt: foundPost.$createdAt,
+            $updatedAt: foundPost.$updatedAt
+          });
+        } else {
+          setError('Blog post not found');
+        }
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPostIfNeeded();
+  }, [id, post]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-center">
+        <div>
+          <p className="text-red-600 text-lg mb-4">Error loading blog post</p>
+          <p className="text-gray-600">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!post) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-xl text-gray-600">No blog post found.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Main content */}
       <article className="max-w-4xl mx-auto px-4 py-8">
-        {/* Article header */}
         <header className="mb-8 border-b border-gray-200">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">{post.title}</h1>
-          <div className="flex items-center space-x-6 text-sm text-gray-600 mb-8">
-            <span>{post.date}</span>
-          </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
         </header>
-        {/* Hero image placeholder */}
-        {/* Article content */}
-        <div className="prose prose-lg max-w-none">
-          {post.description && (
-            <p className="text-gray-700 leading-relaxed mb-6">{post.description}</p>
-          )}
+
+        {post.imageUrl && (
+          <div className="mb-8">
+            <img
+              src={post.imageUrl}
+              alt={post.title}
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+              onError={(e) => (e.target.style.display = 'none')}
+            />
+          </div>
+        )}
+
+        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
-        <footer className="mt-12 pt-8"></footer>
       </article>
     </div>
-  )
-}
+  );
+};
 
-export default BlogDetail
+export default BlogDetail;
