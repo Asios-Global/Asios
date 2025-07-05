@@ -85,7 +85,7 @@ const BlogDetail = () => {
             <img
               src={post.imageUrl}
               alt={post.title}
-              className="w-full h-64 object-cover rounded-lg shadow-lg"
+              className="w-full h-[26rem] object-cover rounded-lg shadow-lg"
               onError={(e) => (e.target.style.display = 'none')}
             />
           </div>
