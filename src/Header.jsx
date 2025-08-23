@@ -11,7 +11,6 @@ const Header = () => {
   const menuRef = useRef(null);
   const { footerData } = useContext(AppContext);
   const data = footerData;
-  console.log("data", data);
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
     // setIsDropdownOpen(false);
