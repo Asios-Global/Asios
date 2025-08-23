@@ -12,9 +12,7 @@ const Header = () => {
   const { footerData } = useContext(AppContext);
   const data = footerData;
   const toggleMenu = () => {
-    setIsOpen((prev) => !prev);
-    // setIsDropdownOpen(false);
-    
+    setIsOpen((prev) => !prev);    
   };
 
   React.useEffect(() => {
