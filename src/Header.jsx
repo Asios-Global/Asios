@@ -110,6 +110,12 @@ const Header = () => {
             >
              Customization
             </Link>
+            <Link
+              to="/blog"
+              className="block px-4 py-2 text-gray-700 hover:text-primary list-inside list-square"
+            >
+             Blog
+            </Link>
           </div>
         </div>
         <Link to="/export" className=" hover:text-primary">
